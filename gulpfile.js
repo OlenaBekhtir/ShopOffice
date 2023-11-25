@@ -4,10 +4,10 @@ const cleanCSS = require('gulp-clean-css');
 const uglify = require('gulp-uglify-es').default;
 const del = require('del');
 const browserSync = require('browser-sync').create();
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass')); 
 const rename = require('gulp-rename');
 const fileinclude = require('gulp-file-include');
-const gutil = require('gulp-util');
+console.log('Your log message here');
 const ftp = require('vinyl-ftp');
 const sourcemaps = require('gulp-sourcemaps');
 const notify = require('gulp-notify');
@@ -265,3 +265,16 @@ const deploy = () => {
 }
 
 exports.deploy = deploy;
+
+const dev = series(
+  clean,
+  parallel(htmlInclude, scripts, fonts, resources, imgToApp, svgSprites),
+  fontsStyle,
+  styles,
+  watchFiles
+);
+
+exports.dev = dev;
+
+// Задача по умолчанию
+exports.default = dev;

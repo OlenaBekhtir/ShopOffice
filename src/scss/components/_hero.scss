@@ -1,8 +1,9 @@
 .hero {
   position: relative;
-  height: 1080px;
-  min-height: 700px;
-  background-color: var(--quill-gray);
+  background-image: url(../../img/kids-art-table.jpeg);
+  background-size: cover; 
+  overflow: hidden;
+  width: 100%;
 
   &::before {
     content: "";
@@ -20,7 +21,7 @@
   }
 
   &__title {
-    margin: 0;
+    margin-top: -200px;
     margin-bottom: 40px;
     max-width: 560px;
     font-weight: 700;
@@ -39,6 +40,7 @@
   &__descr {
     margin: 0;
     font-size: 18px;
+    font-weight: 600;
 
     @include md {
       font-size: 14px;
@@ -49,7 +51,7 @@
     position: absolute;
     right: 273px;
     bottom: 0;
-    width: 40%;
+    width: 100%;
     max-height: 90%;
 
     @include lg-max {

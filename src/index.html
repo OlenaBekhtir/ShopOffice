@@ -45,6 +45,14 @@
       height: 100%;
       object-fit: cover;
     }
+
+    .text {
+      margin-left: 50px;
+      margin-right: 30px;
+      margin-top: 30px;
+      font-size: 18px;
+      text-align: justify;
+    }
   </style>
 </head>
 
@@ -58,8 +66,8 @@
         <nav class="nav header__nav">
           <ul class="nav__list">
             <li class="nav__item"><a href="/" class="main-link nav__link--current">Головна</a></li>
-            <li class="nav__item"><a href="/catalog.html" class="main-link nav__link">Каталог</a></li>
-            <li class="nav__item"><a href="/basket.html" class="main-link nav__link nav__link">Кошик</a></li>
+            <li class="nav__item"><a href="./catalog.html" class="main-link nav__link">Каталог</a></li>
+            <li class="nav__item"><a href="./basket.html" class="main-link nav__link nav__link">Кошик</a></li>
           </ul>
           <button class="nav__close btn-reset">close</button>
         </nav>
@@ -101,6 +109,11 @@
           </div>       
       </section>
 
+      <section class="text">
+        <p>Ласкаво просимо у наш інтернет-магазин канцтоварів "Палітра Ідей"! Тут ідеї оживають кожним мазком пера, а кольори розцвітають на кожному аркуші паперу. Наш магазин - це більше, ніж просто канцелярські товари; це вікно у світ творчості та можливостей!</p>
+        <p>У нас ви знайдете найкращі канцелярські товари від провідних виробників. Ми розуміємо, що кожен клієнт унікальний. Наші фахівці готові надати вам індивідуальні поради та допомогти з вибором товарів. У нашому інтернет-магазині канцтоварів ви знайдете канцелярські знаряддя, які допоможуть втілити будь-яку ідею в життя.</p>
+      </section>
+
       <section class="banners">
         <h2 class="visually-hidden">Banners</h2>
         <div class="container banners__container">
@@ -108,30 +121,25 @@
             <li class="banners__item">
               <article class="banners__article banners-article banners-article--midseason">
                 <h3 class="banners-article__title">Письмове приладдя</h3>
-                <a href="/catalog.html" class="main-link banners-article__link">Детальніше</a>
+                <a href="./catalog.html" class="main-link banners-article__link">Детальніше</a>
               </article>
             </li>
             <li class="banners__item">
               <article class="banners__article banners-article banners-article--summer">
                 <h3 class="banners-article__title">Настільні приналежності</h3>
-                <a href="/catalog.html" class="main-link banners-article__link">Детальніше</a>
+                <a href="./catalog.html" class="main-link banners-article__link">Детальніше</a>
               </article>
             </li>
             <li class="banners__item">
               <article class="banners__article banners-article banners-article--accs">
                 <h3 class="banners-article__title">Офісна канцелярія</h3>
-                <a href="/catalog.html" class="main-link banners-article__link">Детальніше</a>
+                <a href="./catalog.html" class="main-link banners-article__link">Детальніше</a>
               </article>
             </li>
           </ul>
         </div>
-      </section>
+      </section>      
 
-      <section class="text">
-
-      </section>
-
-  
     </main>
 
     <footer class="footer">
@@ -139,41 +147,40 @@
         <div class="footer__content">
           <div class="footer__top">
             <div class="footer__column">
-              <h3 class="footer__title">Customer Service</h3>
+              <h4 class="footer__title">Обслуговування</h4>
               <ul class="footer__list">
-                <li class="footer__item"><a href="tel:+8665972742" class="footer__link">Phone: Не дзвоніть нам</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Live chat</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">About Us</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Terms & Conditions</a></li>
+                <li class="footer__item"><a href="tel:+38099112233" class="footer__link">Тел.: +38 099 111 22 33</a></li>
+                <li class="footer__item"><a href="#" class="footer__link">Чат</a></li>
+                <li class="footer__item"><a href="#" class="footer__link">Про нас</a></li>
+                <li class="footer__item"><a href="#" class="footer__link">Правила & Умови</a></li>
               </ul>
             </div>
             <div class="footer__column">
-              <h3 class="footer__title">Company</h3>
+              <h4 class="footer__title">Компанія</h4>
               <ul class="footer__list">
-                <li class="footer__item"><a href="tel:+8665972742" class="footer__link">What We Do</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Available Services</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">Latest Posts</a></li>
-                <li class="footer__item"><a href="#" class="footer__link">FAQs</a></li>
+                <li class="footer__item"><a href="tel:+8665972742" class="footer__link">Наша діяльність</a></li>
+                <li class="footer__item"><a href="#" class="footer__link">Доступні сервіси</a></li>
+                <li class="footer__item"><a href="#" class="footer__link">Останні дописи</a></li>
+                <li class="footer__item"><a href="#" class="footer__link">Питання/відповіді</a></li>
               </ul>
             </div>
             <div class="footer__column">
-              <h3 class="footer__title">Our Newsletter</h3>
+              <h3 class="footer__title">Наш бюлетень</h3>
               <form action="#" class="footer__form subscribe-form">
-                <h4 class="subscribe-form__title">Join our list and get 15% off your first purchase!</h4>
+                <h4 class="subscribe-form__title">Приєднуйтеся до нашого списку клієнтів та отримайте знижку 15% на першу покупку!</h4>
                 <label class="subscribe-form__field">
                   <input type="email" required placeholder="Email Address">
                 </label>
-                <button class="subscribe-form__btn btn-reset" type="submit">Subscribe</button>
+                <button class="subscribe-form__btn btn-reset" type="submit">Підпишіться на розсилку</button>
               </form>
-              <span class="footer__text">*Don’t worry we don’t spam</span>
+              <span class="footer__text">*Не хвилюйтесь, ми не розсилаємо спам!</span>
             </div>
           </div>
           <div class="footer__bottom">
             <div class="footer__left">
               <ul class="footer__list footer__list--row">
-                <li class="footer__item"><a href="#" class="footer__link footer__link--row">Returns Policy</a></li>
-                <li class="footer__item"><a href="#" class="footer__link footer__link--row">Privacy Policy</a></li>
-                <li class="footer__item"><a href="#" class="footer__link footer__link--row">Privacy Policy</a></li>
+                <li class="footer__item"><a href="#" class="footer__link footer__link--row">Правила повернення товару</a></li>
+                <li class="footer__item"><a href="#" class="footer__link footer__link--row">Політика конфіденційності</a></li>
               </ul>
             </div>
             <div class="footer__right">

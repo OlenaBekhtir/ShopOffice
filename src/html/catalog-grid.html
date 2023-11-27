@@ -11,10 +11,13 @@
       <div class="catalog-props__columns catalog-columns">
         <span class="catalog-columns__text">Column number:</span>
         <ul class="catalog-columns__list">
-          <li class="catalog-columns__item"><button class="btn-reset main-link catalog-columns__btn" data-columns="3">3</button></li>
+          <li class="catalog-columns__item"><button class="btn-reset main-link catalog-columns__btn"
+              data-columns="3">3</button></li>
           <li class="catalog-columns__item"><button
-              class="btn-reset main-link catalog-columns__btn catalog-columns__btn--current" data-columns="4">4</button></li>
-          <li class="catalog-columns__item"><button class="btn-reset main-link catalog-columns__btn" data-columns="5">5</button></li>
+              class="btn-reset main-link catalog-columns__btn catalog-columns__btn--current" data-columns="4">4</button>
+          </li>
+          <li class="catalog-columns__item"><button class="btn-reset main-link catalog-columns__btn"
+              data-columns="5">5</button></li>
         </ul>
       </div>
       <div class="custom-select" tabindex="0">
@@ -31,6 +34,29 @@
     <div class="catalog-props__choice catalog-choice">
       <button class="btn-reset catalog-choice__clear">Clear all</button>
     </div>
+
+<!-- Filter by category -->
+<select id="categoryFilter" class="custom-select__dropdown">
+  <option value="all">All Categories</option>
+  <option value="pencil">Pencil</option>
+  <option value="pen">Pen</option>
+  <option value="paper">Paper</option>
+  <option value="stapler">Stapler</option>
+  <option value="scotch">Scotch</option>
+  <option value="marker">Marker</option>
+  <option value="notebook">Notebook</option>
+  <option value="corrector">Corrector</option>
+  <option value="file">File</option>
+  <option value="eraser">Eraser</option>
+</select>
+
+<!-- Sort by -->
+<select id="sortFilter" class="custom-select__dropdown">
+  <option value="latest">Sort by Latest</option>
+  <option value="price">Sort by Price</option>
+  <option value="name">Sort by Name</option>
+</select>
+
   </div>
   <ul class="catalog-grid__content" data-grid-columns="5">
     <li class="catalog-grid__item">
@@ -858,6 +884,36 @@
         </h3>
         <span class="product__price">$220.00</span>
       </article>
-    </li>
-
+    </li>   
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const categoryFilter = document.getElementById("categoryFilter");
+      const sortFilter = document.getElementById("sortFilter");
+      const products = document.querySelectorAll(".catalog-grid__item");
+
+      categoryFilter.addEventListener("change", updateFilter);
+      sortFilter.addEventListener("change", updateFilter);
+
+      function updateFilter() {
+          const selectedCategory = categoryFilter.value;
+          const selectedSort = sortFilter.value;
+
+          products.forEach((product) => {
+              const category = product.dataset.category;
+
+              // Check if the product belongs to the selected category
+              const showCategory = selectedCategory === "all" || category === selectedCategory;
+
+              // Check if the product should be displayed based on the selected sort option
+              const showSort =
+                  selectedSort === "latest" || // "Latest" doesn't require any sorting
+                  (selectedSort === "price" && category === selectedCategory); // Sorting by price only within the same category
+
+              // Toggle the product's visibility
+              product.style.display = showCategory && showSort ? "block" : "none";
+          });
+      }
+  });
+</script>

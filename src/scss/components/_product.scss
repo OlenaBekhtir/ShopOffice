@@ -1,5 +1,8 @@
 .product {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__image {
     position: relative;
@@ -112,6 +115,7 @@
     transition: transform 0.3s;
   }
 }
+
 
 .new {
   background-image: url("../img/new.png");

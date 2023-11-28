@@ -57,11 +57,11 @@
         <div class="catalog-content">
           <div class="container container-narrow">
             <div class="catalog-filters">
-  <button class="hide-filters btn-reset">Hide Filters</button>
+  <button class="hide-filters btn-reset">Скинути фільтри</button>
   <div class="catalog-filter catalog-filter--open">
     <div class="catalog-filter__top">
       <div class="catalog-filter__caption">
-        <h3 class="catalog-filter__title">Categories</h3>
+        <h3 class="catalog-filter__title">Категорії</h3>
         <span class="catalog-filter__quantity quantity">1</span>
       </div>
       <span class="catalog-filter__toggle"></span>
@@ -71,67 +71,79 @@
         <li class="catalog-filter__item">
           <label class="custom-checkbox" data-text="All categories">
             <input type="checkbox" class="custom-checkbox__input visually-hidden">
-            <span class="custom-checkbox__text">All categories</span>
+            <span class="custom-checkbox__text">Всі категорії</span>
           </label>
         </li>
         <li class="catalog-filter__item">
           <label class="custom-checkbox" data-text="Pencil">
             <input type="checkbox" class="custom-checkbox__input visually-hidden">
-            <span class="custom-checkbox__text">Pencil</span>
+            <span class="custom-checkbox__text">Олівець</span>
           </label>
         </li>
         <li class="catalog-filter__item">
           <label class="custom-checkbox" data-text="Pen">
             <input type="checkbox" class="custom-checkbox__input visually-hidden">
-            <span class="custom-checkbox__text">Pen</span>
+            <span class="custom-checkbox__text">Ручка</span>
           </label>
         </li>
         <li class="catalog-filter__item">
           <label class="custom-checkbox" data-text="Gumka">
             <input type="checkbox" class="custom-checkbox__input visually-hidden">
-            <span class="custom-checkbox__text">Gumka</span>
+            <span class="custom-checkbox__text">Гумка</span>
+          </label>
+        </li>
+        <li class="catalog-filter__item">
+          <label class="custom-checkbox" data-text="Pencil">
+            <input type="checkbox" class="custom-checkbox__input visually-hidden">
+            <span class="custom-checkbox__text">Степлер</span>
           </label>
         </li>
         <li class="catalog-filter__item">
           <label class="custom-checkbox" data-text="Scotch">
             <input type="checkbox" class="custom-checkbox__input visually-hidden">
-            <span class="custom-checkbox__text">Scotch</span>
-          </label>
-        </li>
-        <li class="catalog-filter__item">
-          <label class="custom-checkbox" data-text="Stepler">
-            <input type="checkbox" class="custom-checkbox__input visually-hidden">
-            <span class="custom-checkbox__text">Stepler</span>
+            <span class="custom-checkbox__text">Скотч</span>
           </label>
         </li>
         <li class="catalog-filter__item">
           <label class="custom-checkbox" data-text="Files">
             <input type="checkbox" class="custom-checkbox__input visually-hidden">
-            <span class="custom-checkbox__text">Files</span>
+            <span class="custom-checkbox__text">Файли</span>
           </label>
         </li>
         <li class="catalog-filter__item">
           <label class="custom-checkbox" data-text="Bloknot">
             <input type="checkbox" class="custom-checkbox__input visually-hidden">
-            <span class="custom-checkbox__text">Bloknot</span>
+            <span class="custom-checkbox__text">Блокнот</span>
           </label>
         </li>
         <li class="catalog-filter__item">
           <label class="custom-checkbox" data-text="Corrector">
             <input type="checkbox" class="custom-checkbox__input visually-hidden">
-            <span class="custom-checkbox__text">Corrector</span>
+            <span class="custom-checkbox__text">Коректор</span>
           </label>
         </li>
         <li class="catalog-filter__item">
           <label class="custom-checkbox" data-text="Kreida">
             <input type="checkbox" class="custom-checkbox__input visually-hidden">
-            <span class="custom-checkbox__text">Kreida</span>
+            <span class="custom-checkbox__text">Крейда</span>
           </label>
         </li>
         <li class="catalog-filter__item">
           <label class="custom-checkbox" data-text="Marker">
             <input type="checkbox" class="custom-checkbox__input visually-hidden">
-            <span class="custom-checkbox__text">Marker</span>
+            <span class="custom-checkbox__text">Маркер</span>
+          </label>
+        </li>
+        <li class="catalog-filter__item">
+          <label class="custom-checkbox" data-text="Marker">
+            <input type="checkbox" class="custom-checkbox__input visually-hidden">
+            <span class="custom-checkbox__text">Фарба</span>
+          </label>
+        </li>
+        <li class="catalog-filter__item">
+          <label class="custom-checkbox" data-text="Marker">
+            <input type="checkbox" class="custom-checkbox__input visually-hidden">
+            <span class="custom-checkbox__text">Папіp</span>
           </label>
         </li>
       </ul>
@@ -151,7 +163,7 @@
                     <span>Filters</span>
                   </button>
                   <div class="catalog-props__columns catalog-columns">
-                    <span class="catalog-columns__text">Column number:</span>
+                    <span class="catalog-columns__text">Кількість колонок:</span>
                     <ul class="catalog-columns__list">
                       <li class="catalog-columns__item"><button class="btn-reset main-link catalog-columns__btn"
                           data-columns="3">3</button></li>
@@ -163,12 +175,12 @@
                     </ul>
                   </div>
                   <div class="custom-select" tabindex="0">
-                    <div class="custom-select__top">Sort by latest</div>
+                    <div class="custom-select__top">Відсортувати</div>
                     <div class="custom-select__dropdown">
                       <ul class="custom-select__list">
-                        <li class="custom-select__item">Sort by latest</li>
-                        <li class="custom-select__item">Sort by price</li>
-                        <li class="custom-select__item">Sort by smth</li>
+                        <li class="custom-select__item">Спочатку дешевші</li>
+                        <li class="custom-select__item">Спочатку дорожчі</li>
+                        <li class="custom-select__item">Відсортувати по назві</li>
                       </ul>
                     </div>
                   </div>
@@ -178,44 +190,7 @@
                 </div>
 
             <div id="products-container" class="catalog-grid__content"></div> 
-            <!-- <div class="catalog-grid">
-  <div class="catalog-grid__props catalog-props">
-    <div class="catalog-props__top">
-      <button class="btn-reset catalog-mobile-filters">
-        <svg height="394pt" viewBox="-5 0 394 394.00003" width="394pt" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="m367.820312 0h-351.261718c-6.199219-.0117188-11.878906 3.449219-14.710938 8.960938-2.871094 5.585937-2.367187 12.3125 1.300782 17.414062l128.6875 181.285156c.042968.0625.089843.121094.132812.183594 4.675781 6.3125 7.207031 13.960938 7.21875 21.816406v147.800782c-.027344 4.375 1.691406 8.582031 4.773438 11.6875 3.085937 3.101562 7.28125 4.851562 11.65625 4.851562 2.222656-.003906 4.425781-.445312 6.480468-1.300781l72.3125-27.570313c6.476563-1.980468 10.777344-8.09375 10.777344-15.453125v-120.015625c.011719-7.855468 2.542969-15.503906 7.214844-21.816406.042968-.0625.089844-.121094.132812-.183594l128.691406-181.289062c3.667969-5.097656 4.171876-11.820313 1.300782-17.40625-2.828125-5.515625-8.511719-8.9765628-14.707032-8.964844zm0 0" />
-        </svg>
-        <span>Filters</span>
-      </button>
-      <div class="catalog-props__columns catalog-columns">
-        <span class="catalog-columns__text">Column number:</span>
-        <ul class="catalog-columns__list">
-          <li class="catalog-columns__item"><button class="btn-reset main-link catalog-columns__btn"
-              data-columns="3">3</button></li>
-          <li class="catalog-columns__item"><button
-              class="btn-reset main-link catalog-columns__btn catalog-columns__btn--current" data-columns="4">4</button>
-          </li>
-          <li class="catalog-columns__item"><button class="btn-reset main-link catalog-columns__btn"
-              data-columns="5">5</button></li>
-        </ul>
-      </div>
-      <div class="custom-select" tabindex="0">
-        <div class="custom-select__top">Sort by latest</div>
-        <div class="custom-select__dropdown">
-          <ul class="custom-select__list">
-            <li class="custom-select__item">Sort by latest</li>
-            <li class="custom-select__item">Sort by price</li>
-            <li class="custom-select__item">Sort by smth</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="catalog-props__choice catalog-choice">
-      <button class="btn-reset catalog-choice__clear">Clear all</button>
-    </div> -->
-
-<script>
+            <script>
   const products = [
   {
     "title": "Блокнот",
@@ -555,6 +530,927 @@ products.forEach(product => {
 
 
 
+
+
+<!-- <div class="catalog-grid">
+  <div class="catalog-grid__props catalog-props">
+    <div class="catalog-props__top">
+      <button class="btn-reset catalog-mobile-filters">
+        <svg height="394pt" viewBox="-5 0 394 394.00003" width="394pt" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="m367.820312 0h-351.261718c-6.199219-.0117188-11.878906 3.449219-14.710938 8.960938-2.871094 5.585937-2.367187 12.3125 1.300782 17.414062l128.6875 181.285156c.042968.0625.089843.121094.132812.183594 4.675781 6.3125 7.207031 13.960938 7.21875 21.816406v147.800782c-.027344 4.375 1.691406 8.582031 4.773438 11.6875 3.085937 3.101562 7.28125 4.851562 11.65625 4.851562 2.222656-.003906 4.425781-.445312 6.480468-1.300781l72.3125-27.570313c6.476563-1.980468 10.777344-8.09375 10.777344-15.453125v-120.015625c.011719-7.855468 2.542969-15.503906 7.214844-21.816406.042968-.0625.089844-.121094.132812-.183594l128.691406-181.289062c3.667969-5.097656 4.171876-11.820313 1.300782-17.40625-2.828125-5.515625-8.511719-8.9765628-14.707032-8.964844zm0 0" />
+        </svg>
+        <span>Filters</span>
+      </button>
+      <div class="catalog-props__columns catalog-columns">
+        <span class="catalog-columns__text">Column number:</span>
+        <ul class="catalog-columns__list">
+          <li class="catalog-columns__item"><button class="btn-reset main-link catalog-columns__btn"
+              data-columns="3">3</button></li>
+          <li class="catalog-columns__item"><button
+              class="btn-reset main-link catalog-columns__btn catalog-columns__btn--current" data-columns="4">4</button>
+          </li>
+          <li class="catalog-columns__item"><button class="btn-reset main-link catalog-columns__btn"
+              data-columns="5">5</button></li>
+        </ul>
+      </div>
+      <div class="custom-select" tabindex="0">
+        <div class="custom-select__top">Sort by latest</div>
+        <div class="custom-select__dropdown">
+          <ul class="custom-select__list">
+            <li class="custom-select__item">Sort by latest</li>
+            <li class="custom-select__item">Sort by price</li>
+            <li class="custom-select__item">Sort by smth</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-props__choice catalog-choice">
+      <button class="btn-reset catalog-choice__clear">Clear all</button>
+    </div>
+
+
+<select id="categoryFilter" class="custom-select__dropdown">
+  <option value="all">All Categories</option>
+  <option value="pencil">Pencil</option>
+  <option value="pen">Pen</option>
+  <option value="paper">Paper</option>
+  <option value="stapler">Stapler</option>
+  <option value="scotch">Scotch</option>
+  <option value="marker">Marker</option>
+  <option value="notebook">Notebook</option>
+  <option value="corrector">Corrector</option>
+  <option value="file">File</option>
+  <option value="eraser">Eraser</option>
+</select>
+
+
+<select id="sortFilter" class="custom-select__dropdown">
+  <option value="latest">Sort by Latest</option>
+  <option value="price">Sort by Price</option>
+  <option value="name">Sort by Name</option>
+</select>
+
+  </div>
+  <ul class="catalog-grid__content" data-grid-columns="5">
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Pencil1.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Олівець 1
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Pencil2.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Олівець 2
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Pencil3.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Олівець 3
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Pencil4.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Олівець 4
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Pencil5.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Олівець 5
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Pencil6.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Олівець 6
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/pen11.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Ручка 1
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/pen21.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Ручка 2
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/pen31.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Ручка 3
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/pen41.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Ручка 4
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Paper1.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Бумага 1
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Paper2.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Бумага 2
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Paper3.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Бумага 3
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Paper4.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Бумага 4
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Paper5.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Бумага 5
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Paper6.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Бумага 6
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Stepler1.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Степлер 1
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Stepler2.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Степлер 2
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Stepler3.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Степлер 3
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Stepler4.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Степлер 4
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Stepler5.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Степлер 5
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Stepler6.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Степлер 6
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Skotch1.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Скотч 1
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Scotch2.png" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Скотч 2
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Skotch3.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Скотч 3
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Skotch4.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Скотч 4
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Skotch5.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Скотч 5
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/marker11.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Маркер 1
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/marker21.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Маркер 2
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/marker31.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Маркер 3
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/marker41.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Маркер 4
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Bloknot1.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Блокнот 1
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Bloknot2.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Блокнот 2
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Bloknot3.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Блокнот 3
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Bloknot4.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Блокнот 4
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Bloknot5.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Блокнот 5
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Corector11.png" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Коректор 1
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Corrector21.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Коректор 2
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Corrector31.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Коректор 3
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Corrector41.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Коректор 4
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Files1.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Файлик 1
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Files2.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Файлик 2
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Files3.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Файлик 3
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Files4.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Файлик 4
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Files5.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Файлик 5
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Files6.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Файлик 6
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Gumka11.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Гумка 1
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Gumka21.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Гумка 2
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Gumka31.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Гумка 3
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Gumka41.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Гумка 4
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Gumka51.png" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Гумка 5
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Gumka61.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Гумка 6
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Kreida1.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Крейда 1
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Kreida2.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Крейда 2
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Kreida3.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Крейда 3
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Kreida4.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Крейда 4
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Kreida5.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Крейда 5
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Liner11.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Лінійка 1
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>
+    <li class="catalog-grid__item">
+      <article class="product">
+        <div class="product__image">
+          <img src="img/Liner21.jpg" alt="prod 1">
+        </div>
+        <span class="product-prop product__prop new">New</span>
+        <h3 class="product__title">
+          <a href="#">
+            Лінійка 2
+          </a>
+        </h3>
+        <span class="product__price">$220.00</span>
+      </article>
+    </li>   
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const categoryFilter = document.getElementById("categoryFilter");
+      const sortFilter = document.getElementById("sortFilter");
+      const products = document.querySelectorAll(".catalog-grid__item");
+
+      categoryFilter.addEventListener("change", updateFilter);
+      sortFilter.addEventListener("change", updateFilter);
+
+      function updateFilter() {
+          const selectedCategory = categoryFilter.value;
+          const selectedSort = sortFilter.value;
+
+          products.forEach((product) => {
+              const category = product.dataset.category;
+
+              // Check if the product belongs to the selected category
+              const showCategory = selectedCategory === "all" || category === selectedCategory;
+
+              // Check if the product should be displayed based on the selected sort option
+              const showSort =
+                  selectedSort === "latest" || // "Latest" doesn't require any sorting
+                  (selectedSort === "price" && category === selectedCategory); // Sorting by price only within the same category
+
+              // Toggle the product's visibility
+              product.style.display = showCategory && showSort ? "block" : "none";
+          });
+      }
+  });
+</script> -->
           </div>
         </div>
       </section>
@@ -579,16 +1475,15 @@ products.forEach(product => {
         </div>
         <div class="footer__column">
           <ul class="footer__list footer__list--row">
-            <li class="footer__item"><a href="#" class="footer__link footer__link--row">Returns Policy</a></li>
-            <li class="footer__item"><a href="#" class="footer__link footer__link--row">Privacy Policy</a></li>
-            <li class="footer__item"><a href="#" class="footer__link footer__link--row">Privacy Policy</a></li>
+            <li class="footer__item"><a href="#" class="footer__link footer__link--row">Правила повернення товару</a></li>
+            <li class="footer__item"><a href="#" class="footer__link footer__link--row">Політика конфіденційності</a></li>
           </ul>
         </div>
         <div class="footer__column footer__column--flex">
           <div class="footer__select">
-            <span class="footer__select-caption">Currency</span>
+            <span class="footer__select-caption">Валюта</span>
             <div class="custom-select custom-select--footer" tabindex="0">
-              <div class="custom-select__top">USD</div>
+              <div class="custom-select__top">ГРН</div>
               <div class="custom-select__dropdown">
                 <ul class="custom-select__list">
                   <li class="custom-select__item">USD</li>
@@ -599,9 +1494,9 @@ products.forEach(product => {
             </div>
           </div>
           <div class="footer__select">
-            <span class="footer__select-caption">Language</span>
+            <span class="footer__select-caption">Мова</span>
             <div class="custom-select custom-select--footer" tabindex="0">
-              <div class="custom-select__top">English</div>
+              <div class="custom-select__top">Українська</div>
               <div class="custom-select__dropdown">
                 <ul class="custom-select__list">
                   <li class="custom-select__item">English</li>
@@ -616,7 +1511,7 @@ products.forEach(product => {
       <div class="footer__bottom">
         <div class="footer__left">
           <small class="footer__copy">
-            ©2019 Zonex All rights reserved
+            ©2023 МАГАЗИН КАНЦТОВАРИ Всі права захищені
           </small>
         </div>
         <div class="footer__right">

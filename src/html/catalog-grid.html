@@ -442,7 +442,7 @@
     });
   }
 
-  // Сортируем товары по категориям
+  // Фільтруємо товары по категориям
   const sortedProducts = Array.from(products).sort((a, b) => {
     const titleA = a.dataset.category.toUpperCase();
     const titleB = b.dataset.category.toUpperCase();
@@ -456,12 +456,13 @@
     return 0;
   });
 
-  // Очищаем контейнер перед добавлением отсортированных товаров
+  // Очищаем контейнер перед добавлением відфільтрованих товаров
   productsContainer.innerHTML = '';
 
-  // Добавляем отсортированные товары к контейнеру на странице
+  // Добавляем відфільтровані товари к контейнеру на странице
   sortedProducts.forEach(product => {
     productsContainer.appendChild(product);
   });
+
 
 </script>

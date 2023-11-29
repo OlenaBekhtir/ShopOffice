@@ -62,9 +62,7 @@
     <div class="catalog-filter__top">
       <div class="catalog-filter__caption">
         <h3 class="catalog-filter__title">Категорії</h3>
-        <!-- <span class="catalog-filter__quantity quantity">1</span> -->
       </div>
-      <!-- <span class="catalog-filter__toggle"></span> -->
     </div>
     <div class="catalog-filter__bottom">
       <ul class="catalog-filter__items">
@@ -168,7 +166,7 @@
                           data-columns="5">5</button></li>
                     </ul>
                   </div>
-                  <div class="custom-select" tabindex="0">
+                  <!-- <div class="custom-select" tabindex="0">
                     <div class="custom-select__top">Відсортувати</div>
                     <div class="custom-select__dropdown">
                       <ul class="custom-select__list">
@@ -177,7 +175,15 @@
                         <li class="custom-select__item">Відсортувати по назві</li>
                       </ul>
                     </div>
-                  </div>
+                  </div> -->
+
+                  <label for="sortSelect">Відсортувати за:</label>
+                  <select id="sortSelect">
+                    <option value="cheap">Спочатку дешевші</option>
+                    <option value="expensive">Спочатку дорожчі</option>
+                    <option value="name">Відсортувати по назві</option>
+                  </select>
+
                 </div>
                 <div class="catalog-props__choice catalog-choice">
                   <button class="btn-reset catalog-choice__clear">Clear all</button>
@@ -628,7 +634,7 @@
     });
   }
 
-  // Сортируем товары по категориям
+  // Фільтруємо товары по категориям
   const sortedProducts = Array.from(products).sort((a, b) => {
     const titleA = a.dataset.category.toUpperCase();
     const titleB = b.dataset.category.toUpperCase();
@@ -642,13 +648,14 @@
     return 0;
   });
 
-  // Очищаем контейнер перед добавлением отсортированных товаров
+  // Очищаем контейнер перед добавлением відфільтрованих товаров
   productsContainer.innerHTML = '';
 
-  // Добавляем отсортированные товары к контейнеру на странице
+  // Добавляем відфільтровані товари к контейнеру на странице
   sortedProducts.forEach(product => {
     productsContainer.appendChild(product);
   });
+
 
 </script>
 

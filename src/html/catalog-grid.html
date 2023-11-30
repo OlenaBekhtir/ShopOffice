@@ -1,4 +1,7 @@
 <script>
+
+// Список товарів
+
   const products = [
     {
       "name": "Bloknot",
@@ -61,61 +64,61 @@
       "image": "./img/pen5.jpg"
     },
     {
-      "name": "Corrector",
+      "name": "Korrector",
       "title": "Коректор",
       "price": 45.00,
       "image": "./img/Corr1.jpg"
     },
     {
-      "name": "Corrector",
+      "name": "Korrector",
       "title": "Коректор",
       "price": 47.00,
       "image": "./img/Corr2.jpg"
     },
     {
-      "name": "Corrector",
+      "name": "Korrector",
       "title": "Коректор",
       "price": 35.00,
       "image": "./img/Corr3.jpg"
     },
     {
-      "name": "Corrector",
+      "name": "Korrector",
       "title": "Коректор",
       "price": 50.00,
       "image": "./img/Corr4.jpg"
     },
     {
-      "name": "Corrector",
+      "name": "Korrector",
       "title": "Коректор",
       "price": 52.00,
       "image": "./img/Corr5.jpg"
     },
     {
-      "name": "Files",
+      "name": "TFiles",
       "title": "Файли",
       "price": 152.00,
       "image": "./img/Files1.jpg"
     },
     {
-      "name": "Files",
+      "name": "TFiles",
       "title": "Файли",
       "price": 87.00,
       "image": "./img/Files2.jpg"
     },
     {
-      "name": "Files",
+      "name": "TFiles",
       "title": "Файли",
       "price": 95.00,
       "image": "./img/Files3.jpg"
     },
     {
-      "name": "Files",
+      "name": "TFiles",
       "title": "Файли",
       "price": 100.00,
       "image": "./img/Files4.jpg"
     },
     {
-      "name": "Files",
+      "name": "TFiles",
       "title": "Файли",
       "price": 120.00,
       "image": "./img/Files5.jpg"
@@ -211,31 +214,31 @@
       "image": "./img/Stepler5.jpg"
     },
     {
-      "name": "Pencil",
+      "name": "OPencil",
       "title": "Олівець",
       "price": 25.00,
       "image": "./img/pencil1.jpg"
     },
     {
-      "name": "Pencil",
+      "name": "OPencil",
       "title": "Олівець",
       "price": 70.00,
       "image": "./img/pencil2.jpg"
     },
     {
-      "name": "Pencil",
+      "name": "OPencil",
       "title": "Олівець",
       "price": 125.00,
       "image": "./img/pencil3.jpg"
     },
     {
-      "name": "Pencil",
+      "name": "OPencil",
       "title": "Олівець",
       "price": 30.00,
       "image": "./img/pencil4.jpg"
     },
     {
-      "name": "Pencil",
+      "name": "OPencil",
       "title": "Олівець",
       "price": 150.00,
       "image": "./img/pencil5.jpg"
@@ -331,31 +334,31 @@
       "image": "./img/marker5.jpg"
     },
     {
-      "name": "Farba",
+      "name": "TFjarba",
       "title": "Фарба",
       "price": 55.00,
       "image": "./img/farba1.jpg"
     },
     {
-      "name": "Farba",
+      "name": "TFjarba",
       "title": "Фарба",
       "price": 100.00,
       "image": "./img/farba3.jpg"
     },
     {
-      "name": "Farba",
+      "name": "TFjarba",
       "title": "Фарба",
       "price": 80.00,
       "image": "./img/farba2.jpg"
     },
     {
-      "name": "Farba",
+      "name": "TFjarba",
       "title": "Фарба",
       "price": 170.00,
       "image": "./img/farba4.jpg"
     },
     {
-      "name": "Farba",
+      "name": "TFjarba",
       "title": "Фарба",
       "price": 235.00,
       "image": "./img/farba5.jpg"
@@ -443,7 +446,7 @@
   }
 
   // Фільтруємо товары по категориям
-  const sortedProducts = Array.from(products).sort((a, b) => {
+  const sortedProducts = Array.from(productsArr).sort((a, b) => {
     const titleA = a.dataset.category.toUpperCase();
     const titleB = b.dataset.category.toUpperCase();
 
@@ -463,6 +466,51 @@
   sortedProducts.forEach(product => {
     productsContainer.appendChild(product);
   });
+
+  
+
+  // СОРТУВАННЯ ТОВАРІВ ПО ЦІНІ ТА НАЗВІ
+
+  // Фільтруємо товари по ціні
+  const sortProductsByPrice = () => {
+    // Отримуємо значення вибору з селектора
+    const selectedValue = sortSelect.value;
+
+    if (selectedValue === 'name') {
+      // Очищаем контейнер перед добавлением відфільтрованих товаров
+      productsContainer.innerHTML = '';
+
+      // Добавляем відфільтровані товари к контейнеру на странице
+      sortedProducts.forEach(product => {
+        productsContainer.appendChild(product);
+      });
+    }
+
+    // Якщо вибрано опцію "Спочатку дешевші" або "Спочатку дорожчі"
+    if (selectedValue === 'cheap' || selectedValue === 'expensive') {
+      // Створюємо копію масиву товарів для сортування
+      const sortedProducts = Array.from(productsArr);
+
+      // Сортуємо товари за ціною
+      sortedProducts.sort((a, b) => {
+        const priceA = parseFloat(a.querySelector('p').textContent.split(' ')[1]);
+        const priceB = parseFloat(b.querySelector('p').textContent.split(' ')[1]);
+
+        return selectedValue === 'cheap' ? priceA - priceB : priceB - priceA;
+      });
+
+      // Очищаємо контейнер перед додаванням відсортованих товарів
+      productsContainer.innerHTML = '';
+
+      // Додаємо відсортовані товари до контейнеру на сторінці
+      sortedProducts.forEach(product => {
+        productsContainer.appendChild(product);
+      });
+    }
+  };
+
+  // Додаємо обробник подій для селектора
+  sortSelect.addEventListener('change', sortProductsByPrice);
 
 
 </script>

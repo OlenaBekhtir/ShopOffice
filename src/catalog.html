@@ -13,6 +13,9 @@
       margin-top: 100px;
       margin-inline: 70px;
     }
+    #product-details {
+      margin: 10px;
+    }
   </style>
 </head>
 <body>
@@ -23,6 +26,8 @@
         <div class="catalog-content">
           <div class="container container-narrow">
             @include('html/catalog-filter.html')  
+
+            <div id="product-details"></div>
 
             <div class="catalog-grid">
               <div class="catalog-grid__props catalog-props">

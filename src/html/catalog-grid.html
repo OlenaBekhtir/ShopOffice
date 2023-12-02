@@ -1,6 +1,6 @@
 <script>
 
-// Список товарів
+  // Список товарів
 
   const products = [
     {
@@ -365,39 +365,73 @@
     },
   ]
 
+
   // Получаем контейнер для товаров
   const productsContainer = document.getElementById("products-container");
 
-  // Проходимся по каждому товару и создаем HTML-элемент для отображения
-  products.forEach(product => {
-    const productElement = document.createElement("div");
-    productElement.classList.add("product");
-    productElement.dataset.category = product.name;
+  // Отримуємо список кнопок для зміни кількості колонок
+  const buttons = document.querySelectorAll(".catalog-columns__btn");
 
-    // Создаем элементы для отображения информации о товаре
-    const titleElement = document.createElement("h2");
-    titleElement.textContent = product.title;
-    titleElement.style.marginBottom = "0";
+  // Змінна для зберігання поточної кількості колонок
+  let currentColumns = 4; // Значення за замовчуванням
 
-    const priceElement = document.createElement("p");
-    priceElement.textContent = `Ціна: ${product.price.toFixed(2)} грн.`;
+  // Додаємо обробник подій для кожної кнопки
+  buttons.forEach(button => {
+    button.addEventListener("click", function () {
+      // Отримуємо значення атрибута data-columns кнопки
+      const columns = parseInt(this.getAttribute("data-columns"));
 
-    const imageElement = document.createElement("img");
-    imageElement.src = product.image;
-    imageElement.classList.add("product__image");
-    imageElement.alt = product.title;
-    imageElement.style.width = "100px";
-    imageElement.style.marginInline = "20px";
-    imageElement.style.marginBottom = "30px";
+      // Змінюємо значення поточної кількості колонок
+      currentColumns = columns;
 
-    // Добавляем созданные элементы к элементу товара
-    productElement.appendChild(titleElement);
-    productElement.appendChild(priceElement);
-    productElement.appendChild(imageElement);
-
-    // Добавляем товар к контейнеру на странице
-    productsContainer.appendChild(productElement);
+      // Викликаємо функцію для зміни кількості колонок та стилів
+      changeColumns(currentColumns);
+    });
   });
+
+  // Функція для зміни кількості колонок та стилів
+  function changeColumns(columns) {
+    // Змінюємо стиль grid-template-columns відповідно до нової кількості колонок
+    productsContainer.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
+
+    // Очищаємо контейнер перед зміною кількості колонок
+    productsContainer.innerHTML = "";
+
+    // Проходимось по кожному товару і створюємо HTML-елемент для відображення
+    products.forEach(product => {
+      const productElement = document.createElement("div");
+      productElement.classList.add("product");
+      productElement.dataset.category = product.name;
+
+      // Создаем элементы для отображения информации о товаре
+      const titleElement = document.createElement("h2");
+      titleElement.textContent = product.title;
+      titleElement.style.marginBottom = "0";
+
+      const priceElement = document.createElement("p");
+      priceElement.textContent = `Ціна: ${product.price.toFixed(2)} грн.`;
+
+      const imageElement = document.createElement("img");
+      imageElement.src = product.image;
+      imageElement.classList.add("product__image");
+      imageElement.alt = product.title;
+      imageElement.style.width = "100px";
+      imageElement.style.marginInline = "20px";
+      imageElement.style.marginBottom = "30px";
+
+      // Добавляем созданные элементы к элементу товара
+      productElement.appendChild(titleElement);
+      productElement.appendChild(priceElement);
+      productElement.appendChild(imageElement);
+
+      // Додаємо створений елемент товару до контейнера на сторінці
+      productsContainer.appendChild(productElement);
+    });
+  }
+
+  // Викликаємо функцію для ініціалізації з поточною кількістю колонок
+  changeColumns(currentColumns);
+
 
   // Получаем все чекбоксы категорий
   const categoryCheckboxes = document.querySelectorAll('.custom-checkbox__input');
@@ -467,7 +501,7 @@
     productsContainer.appendChild(product);
   });
 
-  
+
 
   // СОРТУВАННЯ ТОВАРІВ ПО ЦІНІ ТА НАЗВІ
 

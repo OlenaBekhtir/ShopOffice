@@ -206,9 +206,12 @@
   width: 987px;
 
   &__content {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 70px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // margin-bottom: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px; 
 
     @include md {
       justify-content: space-between;

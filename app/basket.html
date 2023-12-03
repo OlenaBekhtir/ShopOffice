@@ -1,11 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=rjh, initial-scale=1.0">
-    <title>Document</title>
+    <title>Канцтовари</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <style>
+        .catalog {
+            margin-top: 100px;
+            margin-inline: 70px;
+        }
+
+        #product-details {
+            margin: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <div>Кошик</div>
+    <div class="site-container">
+        <header class="header catalog-header">
+    <div class="container header__container">
+      <button class="burger btn-reset header__burger">
+        <span class="burger__line"></span>
+      </button>
+      <nav class="nav header__nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="/" class="main-link nav__link">Головна</a></li>
+          <li class="nav__item"><a href="./catalog.html" class="main-link nav__link">Каталог</a></li>
+          <li class="nav__item"><a href="./basket.html" class="main-link  nav__link--current">Кошик</a></li>
+        </ul>
+        <button class="nav__close btn-reset">close</button>
+      </nav>
+      <a href="/" class="logo header__logo" aria-label="logo">
+  
+      </a>
+      <ul class="shop-nav header__shop-nav">
+        <li class="shop-nav__item">
+          <form action="#" class="shop-nav__search-form search-form">
+            <button class="search-form__btn btn-reset" aria-label="Find"></button>
+          </form>
+        </li>
+        <li class="shop-nav__item">
+          <a href="/" class="shop-nav__link shop-nav__link--user" aria-label="Go to cabinet"></a>
+        </li>
+        <li class="shop-nav__item">
+          <a href="/card.html" class="shop-nav__link cart" aria-label="Go to cart">
+            <span class="cart__icon"></span>
+            <span class="cart__quantity quantity">3</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </header>
+        <main class="main">
+            <section class="catalog">
+                <div class="catalog-content">
+                    <div class="basket">
+                        <div id="cart-container"></div>
+                        <div id="empty-cart-message"></div>
+                        <div id="total-price"></div>
+                        <button id="basket-clear">Очистити кошик</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer footer--2">
+	<div class="container footer__container">
+    <div class="footer__content">
+      <div class="footer__top">
+        <div class="footer__column">
+          <ul class="social footer__social">
+            <li class="social__item"><a href="#" class="social__link social__link--tw" aria-label="Go to twitter"></a>
+            </li>
+            <li class="social__item"><a href="#" class="social__link social__link--fb" aria-label="Go to facebook"></a>
+            </li>
+            <li class="social__item"><a href="#" class="social__link social__link--in" aria-label="Go to instagram"></a>
+            </li>
+            <li class="social__item"><a href="#" class="social__link social__link--pin"
+                aria-label="Go to pinterest"></a></li>
+          </ul>
+        </div>
+        <div class="footer__column">
+          <ul class="footer__list footer__list--row">
+            <li class="footer__item"><a href="#" class="footer__link footer__link--row">Правила повернення товару</a></li>
+            <li class="footer__item"><a href="#" class="footer__link footer__link--row">Політика конфіденційності</a></li>
+          </ul>
+        </div>
+        <div class="footer__column footer__column--flex">
+          <div class="footer__select">
+            <span class="footer__select-caption">Валюта</span>
+            <div class="custom-select custom-select--footer" tabindex="0">
+              <div class="custom-select__top">ГРН</div>
+              <div class="custom-select__dropdown">
+                <ul class="custom-select__list">
+                  <li class="custom-select__item">USD</li>
+                  <li class="custom-select__item">EUR</li>
+                  <li class="custom-select__item">GRN</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer__select">
+            <span class="footer__select-caption">Мова</span>
+            <div class="custom-select custom-select--footer" tabindex="0">
+              <div class="custom-select__top">Українська</div>
+              <div class="custom-select__dropdown">
+                <ul class="custom-select__list">
+                  <li class="custom-select__item">English</li>
+                  <li class="custom-select__item">Italian</li>
+                  <li class="custom-select__item">Ukraine</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__left">
+          <small class="footer__copy">
+            ©2023 МАГАЗИН КАНЦТОВАРИ Всі права захищені
+          </small>
+        </div>
+        <div class="footer__right">
+          <img src="img/payment.png" aria-hidden="true" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+        <a href="#" class="to-top">
+            <svg class="">
+                <use xlink:href="img/sprite.svg#to-top"></use>
+            </svg>
+        </a>
+
+    </div>
+
+    <script>
+
+        // Отримуємо кошик з локального сховища при завантаженні сторінки
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        console.log(cart)
+
+        // Витягуємо товари з кошика та відображаємо їх на сторінці кошика
+        const cartContainer = document.getElementById("cart-container");
+        const totalPriceElement = document.getElementById("total-price");
+
+        // Очищаємо контейнер перед відображенням оновленого кошика
+        cartContainer.innerHTML = "";
+
+        let totalPrice = 0;
+        
+
+        // Відображаємо кожен товар з кошика
+        cart.forEach(cartItem => {
+            const cartItemElement = document.createElement("div");
+            // cartItemElement.textContent = `${cartItem.title} - ${cartItem.price} грн.`;
+            cartItemElement.classList.add('basket-item')
+            // Створюємо елементи для відображення деталей товару
+            const titleElement = document.createElement("h3");
+            titleElement.textContent = cartItem.title;
+
+            const priceElement = document.createElement("p");
+            priceElement.textContent = `Ціна: ${cartItem.price.toFixed(2)} грн.`;
+
+            const imageElement = document.createElement("img");
+            imageElement.src = cartItem.image;
+            imageElement.classList.add("basket-item__image");
+            imageElement.alt = cartItem.title;
+
+            // Додаємо елемент товару до контейнера кошика
+            cartContainer.appendChild(cartItemElement);
+
+            // Додаємо створені елементи до контейнера деталей товару
+            cartItemElement.appendChild(imageElement);
+            cartItemElement.appendChild(titleElement);
+            cartItemElement.appendChild(priceElement);
+
+
+            totalPrice += cartItem.price;
+        });
+
+        totalPriceElement.textContent = `Загальна ціна: ${totalPrice.toFixed(2)} грн`;
+
+        // Отримуємо кнопку "Очистити кошик"
+        const resetButton = document.getElementById("basket-clear");
+
+        // Додаємо обробник подій для кнопки "Очистити кошик"
+        resetButton.addEventListener("click", function () {
+            // Очищаємо кошик
+            cart = [];
+            localStorage.removeItem("cart");
+            const cartContainer = document.getElementById("cart-container");
+            const totalPriceElement = document.getElementById("total-price");
+            const emptyCartMessageElement = document.getElementById("empty-cart-message");
+
+            // Отримуємо кошик з локального сховища
+            cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            // Перевіряємо, чи кошик порожній
+            if (cart.length === 0) {
+                // Показуємо повідомлення про те, що кошик порожній
+                emptyCartMessageElement.innerText = "Зараз кошик пустий";
+                totalPriceElement.textContent = `Загальна ціна: 0.00 грн`;
+                // emptyCartMessageElement.style.display = "block";
+
+                // Ховаємо інші елементи
+                cartContainer.style.display = "none";
+                totalQuantityElement.style.display = "none";
+ 
+            } else {
+                // Ховаємо повідомлення про те, що кошик порожній
+                emptyCartMessageElement.style.display = "none";
+
+                // Відображаємо елементи кошика
+                cartContainer.style.display = "block";
+                totalQuantityElement.style.display = "block";
+                totalPriceElement.style.display = "block";
+
+                // Очищаємо контейнер перед відображенням оновленого кошика
+                cartContainer.innerHTML = "";
+
+
+                let totalPrice = 0;
+
+                // Відображаємо кожен товар з кошика
+                cart.forEach(cartItem => {
+                    const cartItemElement = document.createElement("div");
+                    cartItemElement.textContent = `${cartItem.title} - ${cartItem.price} грн.`;
+
+                    // Додаємо елемент товару до контейнера кошика
+                    cartContainer.appendChild(cartItemElement);
+
+                    // підраховуємо ціну
+
+                    totalPrice += cartItem.price;
+                });
+
+                // Виводимо загальну кількість товарів та ціну на екран
+                // totalQuantityElement.textContent = `Загальна кількість товарів: ${totalQuantity}`;
+                totalPriceElement.textContent = `Загальна ціна: ${totalPrice.toFixed(2)} грн`;
+            }
+
+            //   // Оновлюємо відображення товарів на сторінці кошика
+            //   displayCartItems();
+        });
+
+        // Витягуємо товари з кошика та відображаємо їх на сторінці кошика
+        function displayCartItems() {
+           
+        }
+
+    </script>
+
 </body>
+
 </html>

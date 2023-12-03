@@ -672,6 +672,7 @@
         });
       });
 
+
       // Функция для обновления отображаемых товаров в зависимости от выбранных категорий
       function updateProducts() {
         // Получаем выбранные категории
@@ -761,6 +762,9 @@
     });
   });
 
+// Отримуємо кошик з локального сховища при завантаженні сторінки
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
   // Функція для зміни кількості колонок та стилів
   function changeColumns(columns) {
     // Змінюємо стиль grid-template-columns відповідно до нової кількості колонок
@@ -796,6 +800,27 @@
 
         const butElement = document.createElement("button");
         butElement.innerText = "Додати в кошик";
+
+
+        // додаємо обробник подій до кнопки "додати в кошик"
+        butElement.addEventListener("click", function () {
+          const cartItem = {
+            title: product.title,
+            price: product.price,
+            image: product.image,
+            // інші властивості товару, які вам потрібні
+          };
+
+          // Додаємо товар до кошика
+          cart.push(cartItem);
+
+          // Зберігаємо оновлений кошик в локальному сховищі
+          localStorage.setItem("cart", JSON.stringify(cart));
+
+          console.log("Товар додано в кошик")
+          console.log(cartItem)
+        });
+
 
         // Додаємо створені елементи до контейнера деталей товару
         productDetailsContainer.appendChild(titleElement);

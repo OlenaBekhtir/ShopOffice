@@ -23,7 +23,7 @@
         @include('html/header-basket.html')
         <main class="main">
             <section class="catalog">
-                <div class="catalog-content">
+                <div>
                     <div class="basket">
                         <div id="cart-container"></div>
                         <div id="empty-cart-message"></div>
@@ -49,15 +49,25 @@
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
         console.log(cart)
 
+        // Отримуємо кнопку "Очистити кошик"
+        const resetButton = document.getElementById("basket-clear");
+
         // Витягуємо товари з кошика та відображаємо їх на сторінці кошика
         const cartContainer = document.getElementById("cart-container");
         const totalPriceElement = document.getElementById("total-price");
+        const emptyCartMessageElement = document.getElementById("empty-cart-message");
+
+        if (cart.length === 0) {
+            // Показуємо повідомлення про те, що кошик порожній
+            emptyCartMessageElement.innerText = "Зараз кошик пустий";
+            resetButton.style.display = "none";
+        }
+
 
         // Очищаємо контейнер перед відображенням оновленого кошика
         cartContainer.innerHTML = "";
 
         let totalPrice = 0;
-        
 
         // Відображаємо кожен товар з кошика
         cart.forEach(cartItem => {
@@ -70,6 +80,7 @@
 
             const priceElement = document.createElement("p");
             priceElement.textContent = `Ціна: ${cartItem.price.toFixed(2)} грн.`;
+            priceElement.classList.add("basket-price")
 
             const imageElement = document.createElement("img");
             imageElement.src = cartItem.image;
@@ -89,9 +100,6 @@
         });
 
         totalPriceElement.textContent = `Загальна ціна: ${totalPrice.toFixed(2)} грн`;
-
-        // Отримуємо кнопку "Очистити кошик"
-        const resetButton = document.getElementById("basket-clear");
 
         // Додаємо обробник подій для кнопки "Очистити кошик"
         resetButton.addEventListener("click", function () {
@@ -115,7 +123,7 @@
                 // Ховаємо інші елементи
                 cartContainer.style.display = "none";
                 totalQuantityElement.style.display = "none";
- 
+
             } else {
                 // Ховаємо повідомлення про те, що кошик порожній
                 emptyCartMessageElement.style.display = "none";
@@ -127,7 +135,6 @@
 
                 // Очищаємо контейнер перед відображенням оновленого кошика
                 cartContainer.innerHTML = "";
-
 
                 let totalPrice = 0;
 
@@ -149,13 +156,11 @@
                 totalPriceElement.textContent = `Загальна ціна: ${totalPrice.toFixed(2)} грн`;
             }
 
-            //   // Оновлюємо відображення товарів на сторінці кошика
-            //   displayCartItems();
         });
 
         // Витягуємо товари з кошика та відображаємо їх на сторінці кошика
         function displayCartItems() {
-           
+
         }
 
     </script>
